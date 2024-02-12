@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+const PRODUCT_DATA = {
+  products: [
+    {
+      name: "Auth",
+      tiers: Array(12)
+        .fill(undefined)
+        .map((_, i) => ({ volume: 5000 + i * 250 })),
+    },
+    {
+      name: "Identity",
+      tiers: Array(12)
+        .fill(undefined)
+        .map((_, i) => ({ volume: 1000 + i * 100 })),
+    },
+  ],
+};
+
+function Table() {
+  return <pre>{JSON.stringify(PRODUCT_DATA, undefined, 2)}</pre>;
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Table />
     </div>
   );
 }
