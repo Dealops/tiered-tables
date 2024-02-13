@@ -4,13 +4,13 @@ import "./App.css";
 const PRODUCT_DATA = {
   products: [
     {
-      name: "Inbound SMS",
+      name: "Outbound SMS",
       tiers: Array(12)
         .fill(undefined)
         .map((_, i) => ({ volume: 5000 + i * 250 })),
     },
     {
-      name: "Outbound SMS",
+      name: "Inbound SMS",
       tiers: Array(12)
         .fill(undefined)
         .map((_, i) => ({ volume: 1000 + i * 100 })),
